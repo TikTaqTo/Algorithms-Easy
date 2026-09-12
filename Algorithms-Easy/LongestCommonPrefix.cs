@@ -1,23 +1,32 @@
 ﻿namespace Algorithms_Easy;
 
 
-//TODO: Not solved problem
+/// <summary>
+/// 14. Longest Common Prefix
+/// Write a function to find the longest common prefix string amongst an array of strings.
+/// If there is no common prefix, return an empty string "".
+/// </summary>
 public class LongestCommonPrefix
 {
+    /// <summary>
+    /// Standart(Базовое решение). Получаем самое короткое слово, после проходимся по остальным элементам и ищем префикс.
+    /// </summary>
+    /// <param name="strs">["flower","flight","flow"] => "fl"</param>
+    /// <returns>"fl"</returns>
     public string LongestCommonPrefixAnswer(string[] strs)
     {
-        string result = "";
-
-        for (int i = 0, j = strs.Length, t = 0; i != j; i++, j--)
+        string[] sortedStrs = strs.OrderBy(w => w.Length).ToArray();
+        string result = sortedStrs[0];
+        
+        for (int i = sortedStrs.Length-1; i > 0; i--)
         {
-            if (strs[i][t] == strs[j][t])
+            for (int j = 0; j < sortedStrs[i].Length; j++)
             {
-                result.Append(strs[i][j]);
-                t++;
-            }
-            else
-            {
-                break;
+                if (j > result.Length-1 || sortedStrs[i][j] != result[j])
+                {
+                    result = result.Substring(0, j);
+                    break;
+                }
             }
         }
 

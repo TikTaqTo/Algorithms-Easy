@@ -2,6 +2,8 @@
 
 Console.WriteLine("Hello, Leet Code!");
 
-CountCommasinRange test = new CountCommasinRange();
+LongestCommonPrefix test = new LongestCommonPrefix();
 
-Console.WriteLine(test.CountCommas(10068)); // 9069
+//Console.WriteLine(test.LongestCommonPrefixAnswer(["flower","flight","flow"])); 
+//Console.WriteLine(test.LongestCommonPrefixAnswer(["dog","racecar","car"]));  
+Console.WriteLine(test.LongestCommonPrefixAnswer(["ab","a"])); 
