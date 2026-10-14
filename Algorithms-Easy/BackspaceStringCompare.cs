@@ -30,7 +30,7 @@ public class BackspaceStringCompare
 
         Stack<char> secondStack = new Stack<char>();
 
-        foreach (char ch in s) {
+        foreach (char ch in t) {
             if (ch != '#') {
                 secondStack.Push(ch);
             } else if (secondStack.Count > 0) {
