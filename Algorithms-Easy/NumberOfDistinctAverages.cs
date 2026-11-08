@@ -23,12 +23,12 @@ public class NumberOfDistinctAverages
     /// <returns>2</returns>
     public int DistinctAverages(int[] nums)
     {
-        HashSet<int> results = new HashSet<int>();
+        HashSet<double> results = new HashSet<double>();
         nums.Sort();
 
         for (int min = 0, max = nums.Length - 1; min < max; min++, max--)
         {
-            int sum = (nums[min] + nums[max]) / 2;
+            double sum = (nums[min] + nums[max]) / 2;
             if(!results.Contains(sum))
                 results.Add(sum);
         }
