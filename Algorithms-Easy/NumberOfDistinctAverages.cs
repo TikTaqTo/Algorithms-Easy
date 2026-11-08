@@ -28,7 +28,7 @@ public class NumberOfDistinctAverages
 
         for (int min = 0, max = nums.Length - 1; min < max; min++, max--)
         {
-            double sum = (nums[min] + nums[max]) / 2;
+            double sum = (nums[min] + nums[max]) / 2.0;
             if(!results.Contains(sum))
                 results.Add(sum);
         }
